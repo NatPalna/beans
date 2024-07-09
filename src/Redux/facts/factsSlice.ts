@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Fact, Page } from "../../types";
-import { instance } from "../../axiosInsrance";
+import { instance } from "../../axiosInstance";
 
 type FactsState = Page & {
   isLoading: boolean;

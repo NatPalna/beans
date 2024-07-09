@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Bean } from "../../types";
-import { instance } from "../../axiosInsrance";
+import { instance } from "../../axiosInstance";
 
 type BeansState = {
   isLoading: boolean;

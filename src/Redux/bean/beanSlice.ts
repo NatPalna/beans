@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Bean } from "../../types";
-import { instance } from "../../axiosInsrance";
+import { instance } from "../../axiosInstance";
 
 type BeanState = {
   isLoading: boolean;
@@ -29,8 +29,8 @@ const beanSlice = createSlice({
       state.isError = false;
     });
     builder.addCase(getBean.fulfilled, (state, { payload }) => {
-      state.isLoading = false;
       state.data = payload;
+      state.isLoading = false;
     });
     builder.addCase(getBean.rejected, (state) => {
       state.isLoading = false;

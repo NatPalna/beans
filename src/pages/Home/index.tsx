@@ -1,5 +1,5 @@
 import "./styles.css";
-import image from "../../assets/images/main.gif";
+import image from "../../images/main.gif";
 
 export const Home = () => {
   return (

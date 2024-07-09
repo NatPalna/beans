@@ -13,27 +13,27 @@ import { BeanPage } from "./pages/BeanPage";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "BeansProject",
     element: <Layout />,
     loader: Loader,
     children: [
       { index: true, element: <Home /> },
       {
-        path: "/beans",
+        path: "beans",
         element: <BeansPage />,
       },
       {
-        path: "/bean/:id",
+        path: "bean/:id",
         element: <BeanPage />,
       },
       {
-        path: "/facts",
+        path: "facts",
         element: <FactsPage />,
       },
-      { path: "/recipes", element: <RecipesPage /> },
-      { path: "/history", element: <HistoryPage /> },
+      { path: "recipes", element: <RecipesPage /> },
+      { path: "history", element: <HistoryPage /> },
       {
-        path: "/combinations",
+        path: "combinations",
         element: <CombinationsPage />,
       },
       { path: "*", element: <NotFound /> },

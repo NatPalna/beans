@@ -6,16 +6,16 @@ export const Header = () => {
   return (
     <header>
       <div className={styles.container}>
-        <Link to="/" className={styles.logo}>
+        <Link to="/BeansProject" className={styles.logo}>
           <img src={logo} alt="logo" />
           <span>Jelly Belly</span>
         </Link>
         <nav>
-          <Link to="/beans">Beans</Link>
-          <Link to="/facts">Facts</Link>
-          <Link to="/recipes">Recipes</Link>
-          <Link to="/combinations">Combinations</Link>
-          <Link to="/history">History</Link>
+          <Link to="/BeansProject/beans">Beans</Link>
+          <Link to="/BeansProject/facts">Facts</Link>
+          <Link to="/BeansProject/recipes">Recipes</Link>
+          <Link to="/BeansProject/combinations">Combinations</Link>
+          <Link to="/BeansProject/history">History</Link>
         </nav>
       </div>
     </header>

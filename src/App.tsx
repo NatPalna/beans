@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Layout>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/BeansProject" element={<Home />} />
             <Route path="/beans" element={<BeansPage />} />
             <Route path="/facts" element={<FactsPage />} />
             <Route path="/bean/:id" element={<BeanPage />} />

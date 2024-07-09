@@ -10,6 +10,7 @@ import { CombinationsPage } from "./pages/Combinations";
 import { Home } from "./pages/Home";
 import { HistoryPage } from "./pages/History";
 import { BeanPage } from "./pages/BeanPage";
+import { NotFound } from "./pages/NotFound";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/recipes" element={<RecipesPage />} />
             <Route path="/combinations" element={<CombinationsPage />} />
             <Route path="/history" element={<HistoryPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </BrowserRouter>

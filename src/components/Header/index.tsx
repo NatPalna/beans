@@ -1,8 +1,13 @@
 import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import { useIsMobile } from "../../hooks/useMobile";
+import { MobileMenu } from "./MobileMenu";
+import { DesktopMenu } from "./DesktopMenu";
 
 export const Header = () => {
+  const isMobile = useIsMobile();
+
   return (
     <header>
       <div className={styles.container}>
@@ -10,13 +15,7 @@ export const Header = () => {
           <img src={logo} alt="logo" />
           <span>Jelly Belly</span>
         </Link>
-        <nav>
-          <Link to="/BeansProject/beans">Beans</Link>
-          <Link to="/BeansProject/facts">Facts</Link>
-          <Link to="/BeansProject/recipes">Recipes</Link>
-          <Link to="/BeansProject/combinations">Combinations</Link>
-          <Link to="/BeansProject/history">History</Link>
-        </nav>
+        {isMobile ? <MobileMenu /> : <DesktopMenu />}
       </div>
     </header>
   );

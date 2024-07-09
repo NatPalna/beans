@@ -9,7 +9,7 @@ type Props = {
 export const BeanCard: FC<Props> = ({ data }) => {
   return (
     <Link
-      to={`/bean/${data.beanId}`}
+      to={`/BeansProject/bean/${data.beanId}`}
       className={styles.wrapper}
       style={{
         background: data.backgroundColor,

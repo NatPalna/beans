@@ -18,7 +18,6 @@ export const getBean = createAsyncThunk("bean", async (id: string) => {
   const { data } = await axios.get(
     `https://jellybellywikiapi.onrender.com/api/Beans/${id}`
   );
-  console.log(data);
   return data;
 });
 
@@ -32,8 +31,9 @@ const beanSlice = createSlice({
       state.isError = false;
     });
     builder.addCase(getBean.fulfilled, (state, { payload }) => {
-      state.data = payload;
+      console.log(payload);
       state.isLoading = false;
+      state.data = payload;
     });
     builder.addCase(getBean.rejected, (state) => {
       state.isLoading = false;

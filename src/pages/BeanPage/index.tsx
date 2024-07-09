@@ -12,13 +12,12 @@ export const BeanPage = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
   const { data, isLoading, isError } = useSelector(beanSelector);
-
   useEffect(() => {
     dispatch(getBean(id));
-  }, []);
+  }, [id]);
   return (
     <>
-      {isLoading ? (
+      {isLoading && data !== null ? (
         <Loader />
       ) : (
         <div

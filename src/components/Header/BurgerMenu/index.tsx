@@ -9,9 +9,10 @@ export const BurgerMenu: FC<Props> = ({ isOpen, setIsOpen }) => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <div className={styles.container} onClick={handleClick}>
-      <input type="checkbox" name="" id="" />
+      <input type="checkbox" checked={isOpen} id="" />
       <div className={styles.hamburger_lines}>
         <span className={`${styles.line} ${styles.line1}`}></span>
         <span className={`${styles.line} ${styles.line2}`}></span>

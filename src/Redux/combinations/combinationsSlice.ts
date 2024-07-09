@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 import { Combination, Page } from "../../types";
+import { instance } from "../../axiosInsrance";
 
 type CombinationsState = Page & {
   isLoading: boolean;
@@ -21,8 +21,8 @@ const initialState: CombinationsState = {
 export const getCombinations = createAsyncThunk(
   "combinations",
   async (page: number) => {
-    const { data } = await axios.get(
-      `https://jellybellywikiapi.onrender.com/api/combinations?pageIndex=${page}&pageSize=18`
+    const { data } = await instance.get(
+      `/combinations?pageIndex=${page}&pageSize=18`
     );
     return data;
   }

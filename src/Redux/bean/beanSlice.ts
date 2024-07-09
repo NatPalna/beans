@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 import { Bean } from "../../types";
+import { instance } from "../../axiosInsrance";
 
 type BeanState = {
   isLoading: boolean;
@@ -15,9 +15,7 @@ const initialState: BeanState = {
 };
 
 export const getBean = createAsyncThunk("bean", async (id: string) => {
-  const { data } = await axios.get(
-    `https://jellybellywikiapi.onrender.com/api/Beans/${id}`
-  );
+  const { data } = await instance.get(`/Beans/${id}`);
   return data;
 });
 
@@ -31,7 +29,6 @@ const beanSlice = createSlice({
       state.isError = false;
     });
     builder.addCase(getBean.fulfilled, (state, { payload }) => {
-      console.log(payload);
       state.isLoading = false;
       state.data = payload;
     });

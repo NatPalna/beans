@@ -12,14 +12,16 @@ export const BeanPage = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
   const { data, isLoading, isError } = useSelector(beanSelector);
+
   useEffect(() => {
     dispatch(getBean(id));
   }, [id]);
+
   return (
     <>
-      {isLoading && data !== null ? (
-        <Loader />
-      ) : (
+      {isLoading && <Loader />}
+
+      {data && (
         <div
           className="bean_container"
           style={{ background: data.backgroundColor }}

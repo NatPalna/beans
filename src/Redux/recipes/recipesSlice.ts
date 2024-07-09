@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 import { Page, Recipe } from "../../types";
+import { instance } from "../../axiosInsrance";
 
 type RecipesState = Page & {
   isLoading: boolean;
@@ -19,9 +19,7 @@ const initialState: RecipesState = {
 };
 
 export const getRecipes = createAsyncThunk("recipes", async (page: number) => {
-  const { data } = await axios.get(
-    `https://jellybellywikiapi.onrender.com/api/Recipes?pageIndex=${page}&pageSize=10`
-  );
+  const { data } = await instance.get(`/Recipes?pageIndex=${page}&pageSize=10`);
   return data;
 });
 

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 import { History, Page } from "../../types";
+import { instance } from "../../axiosInsrance";
 
 type HistoryState = Page & {
   isLoading: boolean;
@@ -19,8 +19,8 @@ const initialState: HistoryState = {
 };
 
 export const getHistory = createAsyncThunk("history", async (page: number) => {
-  const { data } = await axios.get(
-    `https://jellybellywikiapi.onrender.com/api/MileStones?pageIndex=${page}&pageSize=16`
+  const { data } = await instance.get(
+    `/MileStones?pageIndex=${page}&pageSize=16`
   );
   return data;
 });

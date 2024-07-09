@@ -1,16 +1,14 @@
 import { Header } from "../Header";
 import { Footer } from "../Footer";
-import { FC, ReactNode } from "react";
+import { Outlet } from "react-router-dom";
 
-type Props = {
-  children: ReactNode;
-};
-
-export const Layout: FC<Props> = ({ children }) => {
+export const Layout = () => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </>
   );

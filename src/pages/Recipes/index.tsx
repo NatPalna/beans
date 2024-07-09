@@ -5,9 +5,9 @@ import { Error } from "../../components/Error";
 import { Loader } from "../../components/Loader";
 import { RecipeCard } from "../../components/RecipeCard";
 import { RecipesSelector } from "../../Redux/recipes/recipesSelector";
-import { getRecipes } from "../../Redux/recipes/recipesSlice";
 import { useAppDispatch } from "../../Redux/store";
 import "./styles.css";
+import { getRecipes } from "../../api/recipes";
 
 export const RecipesPage = () => {
   const dispatch = useAppDispatch();

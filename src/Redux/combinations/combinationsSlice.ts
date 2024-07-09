@@ -1,12 +1,6 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { Combination, Page } from "../../types";
-import { instance } from "../../axiosInstance";
-
-type CombinationsState = Page & {
-  isLoading: boolean;
-  data: Combination[];
-  isError: boolean;
-};
+import { createSlice } from "@reduxjs/toolkit";
+import { CombinationsState } from "../../types/state";
+import { getCombinations } from "../../api/combinations";
 
 const initialState: CombinationsState = {
   isLoading: false,
@@ -17,16 +11,6 @@ const initialState: CombinationsState = {
   totalCount: 0,
   totalPages: 0,
 };
-
-export const getCombinations = createAsyncThunk(
-  "combinations",
-  async (page: number) => {
-    const { data } = await instance.get(
-      `/combinations?pageIndex=${page}&pageSize=18`
-    );
-    return data;
-  }
-);
 
 export const combinationsSlice = createSlice({
   name: "combinations",

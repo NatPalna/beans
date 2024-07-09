@@ -43,6 +43,12 @@ h1 {
   color: var(--base-red);
 }
 
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #root {
+    grid-template-rows: 120px 1fr 20px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   #root {
     grid-template-rows: 80px 1fr 20px;

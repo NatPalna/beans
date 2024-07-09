@@ -29,6 +29,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 30px;
+    padding: 70px 0;
   }
 
   .bean_container img {

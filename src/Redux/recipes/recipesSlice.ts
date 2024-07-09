@@ -1,12 +1,6 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { Page, Recipe } from "../../types";
-import { instance } from "../../axiosInstance";
-
-type RecipesState = Page & {
-  isLoading: boolean;
-  data: Recipe[];
-  isError: boolean;
-};
+import { createSlice } from "@reduxjs/toolkit";
+import { RecipesState } from "../../types/state";
+import { getRecipes } from "../../api/recipes";
 
 const initialState: RecipesState = {
   isLoading: false,
@@ -17,11 +11,6 @@ const initialState: RecipesState = {
   totalCount: 0,
   totalPages: 0,
 };
-
-export const getRecipes = createAsyncThunk("recipes", async (page: number) => {
-  const { data } = await instance.get(`/Recipes?pageIndex=${page}&pageSize=10`);
-  return data;
-});
 
 export const recipesSlice = createSlice({
   name: "recipes",

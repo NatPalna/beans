@@ -5,9 +5,9 @@ import { BeanCard } from "../../components/BeanCard";
 import { Error } from "../../components/Error";
 import { Loader } from "../../components/Loader";
 import { beansSelector } from "../../Redux/beans/beansSelector";
-import { getAllBeans } from "../../Redux/beans/beansSlice";
 import { useAppDispatch } from "../../Redux/store";
 import "./styles.css";
+import { getBeans } from "../../api/beans";
 
 export const BeansPage = () => {
   const dispatch = useAppDispatch();
@@ -15,7 +15,7 @@ export const BeansPage = () => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    dispatch(getAllBeans(page));
+    dispatch(getBeans(page));
   }, [page]);
 
   const load = () => {

@@ -1,12 +1,6 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { History, Page } from "../../types";
-import { instance } from "../../axiosInstance";
-
-type HistoryState = Page & {
-  isLoading: boolean;
-  data: History[];
-  isError: boolean;
-};
+import { createSlice } from "@reduxjs/toolkit";
+import { HistoryState } from "../../types/state";
+import { getHistory } from "../../api/history";
 
 const initialState: HistoryState = {
   isLoading: false,
@@ -17,13 +11,6 @@ const initialState: HistoryState = {
   totalCount: 0,
   totalPages: 0,
 };
-
-export const getHistory = createAsyncThunk("history", async (page: number) => {
-  const { data } = await instance.get(
-    `/MileStones?pageIndex=${page}&pageSize=16`
-  );
-  return data;
-});
 
 export const historySlice = createSlice({
   name: "history",

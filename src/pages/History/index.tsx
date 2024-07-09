@@ -4,9 +4,9 @@ import { useSelector } from "react-redux";
 import { Error } from "../../components/Error";
 import { Loader } from "../../components/Loader";
 import { historySelector } from "../../Redux/history/historySelector";
-import { getHistory } from "../../Redux/history/historySlice";
 import { useAppDispatch } from "../../Redux/store";
 import "./styles.css";
+import { getHistory } from "../../api/history";
 
 export const HistoryPage = () => {
   const dispatch = useAppDispatch();

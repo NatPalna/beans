@@ -4,9 +4,9 @@ import { useParams } from "react-router-dom";
 import { Error } from "../../components/Error";
 import { Loader } from "../../components/Loader";
 import { beanSelector } from "../../Redux/bean/beanSelector";
-import { getBean } from "../../Redux/bean/beanSlice";
 import { useAppDispatch } from "../../Redux/store";
 import "./styles.css";
+import { getBean } from "../../api/bean";
 
 export const BeanPage = () => {
   const { id } = useParams();

@@ -3,9 +3,9 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { useSelector } from "react-redux";
 import { Loader } from "../../components/Loader";
 import { combinationsSelector } from "../../Redux/combinations/combinationsSelector";
-import { getCombinations } from "../../Redux/combinations/combinationsSlice";
 import { useAppDispatch } from "../../Redux/store";
 import { Error } from "../../components/Error";
+import { getCombinations } from "../../api/combinations";
 import "./styles.css";
 
 export const CombinationsPage = () => {

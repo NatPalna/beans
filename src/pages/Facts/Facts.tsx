@@ -5,9 +5,9 @@ import { Error } from "../../components/Error";
 import { FactCard } from "../../components/FactCard";
 import { Loader } from "../../components/Loader";
 import { FactsSelector } from "../../Redux/facts/factsSelector";
-import { getFacts } from "../../Redux/facts/factsSlice";
 import { useAppDispatch } from "../../Redux/store";
 import "./styles.css";
+import { getFacts } from "../../api/facts";
 
 export const FactsPage = () => {
   const dispatch = useAppDispatch();

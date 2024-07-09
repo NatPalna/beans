@@ -1,23 +1,12 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { Bean } from "../../types";
-import { instance } from "../../axiosInstance";
-
-type BeanState = {
-  isLoading: boolean;
-  data: Bean | null;
-  isError: boolean;
-};
+import { createSlice } from "@reduxjs/toolkit";
+import { BeanState } from "../../types/state";
+import { getBean } from "../../api/bean";
 
 const initialState: BeanState = {
   isLoading: false,
   data: null,
   isError: false,
 };
-
-export const getBean = createAsyncThunk("bean", async (id: string) => {
-  const { data } = await instance.get(`/Beans/${id}`);
-  return data;
-});
 
 const beanSlice = createSlice({
   name: "bean",
@@ -27,10 +16,11 @@ const beanSlice = createSlice({
     builder.addCase(getBean.pending, (state) => {
       state.isLoading = true;
       state.isError = false;
+      state.data = null;
     });
     builder.addCase(getBean.fulfilled, (state, { payload }) => {
-      state.data = payload;
       state.isLoading = false;
+      state.data = payload;
     });
     builder.addCase(getBean.rejected, (state) => {
       state.isLoading = false;

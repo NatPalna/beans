@@ -10,10 +10,12 @@ import { HistoryPage } from "./pages/History";
 import { NotFound } from "./pages/NotFound";
 import { Loader } from "./components/Loader";
 import { BeanPage } from "./pages/BeanPage";
+import Review from "./pages/Review/Review";
+import About from "./pages/About/About";
 
 export const router = createBrowserRouter([
   {
-    path: "BeansProject",
+    path: "beans",
     element: <Layout />,
     loader: Loader,
     children: [
@@ -35,6 +37,14 @@ export const router = createBrowserRouter([
       {
         path: "combinations",
         element: <CombinationsPage />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "review",
+        element: <Review />,
       },
       { path: "*", element: <NotFound /> },
     ],

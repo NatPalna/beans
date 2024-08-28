@@ -16,20 +16,26 @@ export const MobileMenu = () => {
       {isOpen && (
         <div className={styles.wrapper}>
           <nav>
-            <Link to="/BeansProject/beans" onClick={handleLinkClick}>
+            <Link to="/beans/beans" onClick={handleLinkClick}>
               Beans
             </Link>
-            <Link to="/BeansProject/facts" onClick={handleLinkClick}>
+            <Link to="/beans/facts" onClick={handleLinkClick}>
               Facts
             </Link>
-            <Link to="/BeansProject/recipes" onClick={handleLinkClick}>
+            <Link to="/beans/recipes" onClick={handleLinkClick}>
               Recipes
             </Link>
-            <Link to="/BeansProject/combinations" onClick={handleLinkClick}>
+            <Link to="/beans/combinations" onClick={handleLinkClick}>
               Combinations
             </Link>
-            <Link to="/BeansProject/history" onClick={handleLinkClick}>
+            <Link to="/beans/history" onClick={handleLinkClick}>
               History
+            </Link>
+            <Link to="/beans/about" onClick={handleLinkClick}>
+              About
+            </Link>
+            <Link to="/beans/review" onClick={handleLinkClick}>
+              Review
             </Link>
           </nav>
         </div>
